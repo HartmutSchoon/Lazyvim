@@ -33,3 +33,6 @@ map("n", "<leader>re", "<cmd>RustLsp expandMacro<cr>", { desc = "Expand Macro" }
 map("n", "<leader>T", "", { desc = "+text" })
 map("n", "<leader>Tl", "<cmd>VimtexCompile<cr>", { desc = "Latex compile" })
 map("n", "<leader>Tm", "<cmd>MarkdownPreview<cr>", { desc = "Markdown preview" })
+
+-- Telescope undo
+map("n", "<leader>U", "<cmd>Telescope undo<cr>", { desc = "Undo history" })

@@ -4,12 +4,13 @@ return {
   { "luisiacc/gruvbox-baby" },
   { "rebelot/kanagawa.nvim" },
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  { "shaunsingh/nord.nvim" },
 
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = { "gruvbox" },
+      colorscheme = { "nord" },
     },
   },
 }
