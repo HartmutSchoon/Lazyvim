@@ -23,6 +23,11 @@ map("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<cr>", { desc = "Hor
 map("n", "<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>", { desc = "Vertical terminal" })
 map("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", { desc = "Floating terminal" })
 
+-- Python
+-- map("n", "<leader>p", "", { desc = "+pyhton" })
+-- map("n", "<leader>pe", "<cmd>CondaActivate<cr>", { desc = "Environments" })
+-- map("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<cr>", { desc = "Horizontal terminal" })
+
 -- Rust
 map("n", "<leader>r", "", { desc = "+rust" })
 map("n", "<leader>rr", "<cmd>RustLsp runnables<cr>", { desc = "Rust runables" })
