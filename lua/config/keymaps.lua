@@ -24,8 +24,8 @@ map("n", "<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>", { desc = "Verti
 map("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", { desc = "Floating terminal" })
 
 -- Python
--- map("n", "<leader>p", "", { desc = "+pyhton" })
--- map("n", "<leader>pe", "<cmd>CondaActivate<cr>", { desc = "Environments" })
+map("n", "<leader>p", "", { desc = "+pyhton" })
+map("n", "<leader>pr", "<cmd>TermExec cmd='poetry run default_entry'<cr>", { desc = "Run file" })
 -- map("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<cr>", { desc = "Horizontal terminal" })
 
 -- Rust

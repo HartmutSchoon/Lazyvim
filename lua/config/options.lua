@@ -15,3 +15,6 @@ vim.opt.smartindent = true
 
 -- better colors
 vim.opt.termguicolors = true
+
+vim.opt.clipboard = "unnamed"
+vim.opt.clipboard = "unnamedplus"
