@@ -1,6 +1,6 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
+-- Keymap are automatically loaded on the VeryLazy event
+-- Default keymap that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymap.lua
+-- Add any additional keymap here
 
 local map = LazyVim.safe_keymap_set
 
@@ -24,7 +24,7 @@ map("n", "<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>", { desc = "Verti
 map("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", { desc = "Floating terminal" })
 
 -- Python
-map("n", "<leader>p", "", { desc = "+pyhton" })
+map("n", "<leader>p", "", { desc = "+python" })
 map("n", "<leader>pr", "<cmd>TermExec cmd='poetry run default_entry'<cr>", { desc = "Run file" })
 -- map("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<cr>", { desc = "Horizontal terminal" })
 
