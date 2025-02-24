@@ -1,6 +1,6 @@
 return {
   "theHamsta/nvim-dap-virtual-text",
   opts = {
-    enabled = false,
+    enabled = true,
   },
 }
