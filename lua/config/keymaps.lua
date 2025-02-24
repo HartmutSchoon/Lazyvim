@@ -25,8 +25,8 @@ map("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", { desc = "Floating
 
 -- Python
 map("n", "<leader>p", "", { desc = "+python" })
-map("n", "<leader>pr", "<cmd>TermExec cmd='poetry run current_project'<cr>", { desc = "Run current project" })
-map("n", "<leader>pf", "<cmd>TermExec cmd='poetry run python %'<cr>", { desc = "Run file" })
+map("n", "<leader>pr", "<cmd>TermExec cmd='uv run current_project'<cr>", { desc = "Run current project" })
+map("n", "<leader>pf", "<cmd>TermExec cmd='uv run python %'<cr>", { desc = "Run file" })
 
 -- Rust
 map("n", "<leader>r", "", { desc = "+rust" })
