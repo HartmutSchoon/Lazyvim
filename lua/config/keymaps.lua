@@ -16,6 +16,7 @@ map("n", "<C-Right>", '<cmd>lua require("smart-splits").resize_right()<cr>', { d
 -- Pilot
 map("n", "<leader>aE", "<cmd>Copilot enable<cr>", { desc = "Copilot enable" })
 map("n", "<leader>aD", "<cmd>Copilot disable<cr>", { desc = "Copilot disable" })
+map("n", "<leader>aR", "<cmd>CopilotChatReset<cr>", { desc = "Reset Copilot Chat" })
 
 -- ToggleTerm
 map("n", "<leader>t", "", { desc = "+terminal" })
