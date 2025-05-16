@@ -17,4 +17,26 @@ vim.opt.smartindent = true
 vim.opt.termguicolors = true
 
 vim.opt.clipboard = "unnamed"
-vim.opt.clipboard = "unnamedplus"
+
+-- Copy would hang when using ssh
+-- Following code fixes this issue
+vim.o.clipboard = "unnamedplus"
+
+local function paste()
+  return {
+    vim.fn.split(vim.fn.getreg(""), "\n"),
+    vim.fn.getregtype(""),
+  }
+end
+
+vim.g.clipboard = {
+  name = "OSC 52",
+  copy = {
+    ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+    ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+  },
+  paste = {
+    ["+"] = paste,
+    ["*"] = paste,
+  },
+}
