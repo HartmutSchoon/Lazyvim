@@ -16,4 +16,8 @@ return {
       colorscheme = { "gruvbox" },
     },
   },
+
+  require("catppuccin").setup({
+    auto_integrations = true,
+  }),
 }
