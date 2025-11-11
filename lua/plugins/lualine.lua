@@ -2,7 +2,8 @@ return {
   "nvim-lualine/lualine.nvim",
   opts = {
     options = {
-      theme = "catppuccin",
+      -- theme = "catppuccin",
+      theme = "gruvbox-material",
     },
   },
 }
