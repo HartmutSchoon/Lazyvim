@@ -2,6 +2,7 @@ return {
   -- add colorschemes
   { "ellisonleao/gruvbox.nvim" },
   { "luisiacc/gruvbox-baby" },
+  { "ellisonleao/gruvbox.nvim" },
   { "rebelot/kanagawa.nvim" },
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   { "shaunsingh/nord.nvim" },
@@ -12,7 +13,7 @@ return {
     opts = {
       -- colorscheme = { "catppuccin-macchiato" },
       -- colorscheme = { "nord" },
-      colorscheme = { "gruvbox-baby" },
+      colorscheme = { "gruvbox" },
     },
   },
 }
