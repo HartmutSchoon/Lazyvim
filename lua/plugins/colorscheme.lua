@@ -2,22 +2,24 @@ return {
   -- add colorschemes
   { "ellisonleao/gruvbox.nvim" },
   { "luisiacc/gruvbox-baby" },
-  { "ellisonleao/gruvbox.nvim" },
   { "rebelot/kanagawa.nvim" },
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    opts = {
+      integrations = {
+        lualine = true,
+      },
+    },
+  },
   { "shaunsingh/nord.nvim" },
 
-  -- Configure LazyVim to load gruvbox
+  -- Configure LazyVim to load catppuccin-macchiato
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = { "catppuccin-macchiato" },
-      -- colorscheme = { "nord" },
-      -- colorscheme = { "gruvbox" },
+      colorscheme = "catppuccin-macchiato",
     },
   },
-
-  require("catppuccin").setup({
-    auto_integrations = true,
-  }),
 }
