@@ -5,7 +5,10 @@ return {
     { "smart-splits-nvim/backend-tmux", main = "smart-splits-backend-tmux" },
   },
   opts = {
-    mux = { backend = "smart-splits-backend-tmux" },
+    mux = {
+      backend = "smart-splits-backend-tmux",
+      warn_if_unusable = false,
+    },
   },
   keys = {
     -- Move across Neovim splits and tmux panes seamlessly
