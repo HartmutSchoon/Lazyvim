@@ -4,6 +4,10 @@ return {
   lazy = false,
   ---@type snacks.Config
   opts = {
-    debug = { enabled = true },
+    terminal = {
+      win = {
+        style = "terminal",
+      },
+    },
   },
 }

@@ -7,26 +7,41 @@ local map = LazyVim.safe_keymap_set
 -- Outline
 map("n", "<leader>o", "<cmd>Outline<cr>", { desc = "Toggle Outline" })
 
--- Resize windows
-map("n", "<C-Up>", '<cmd>lua require("smart-splits").resize_up()<cr>', { desc = "Resize up" })
-map("n", "<C-Down>", '<cmd>lua require("smart-splits").resize_down()<cr>', { desc = "Resize down" })
-map("n", "<C-Left>", '<cmd>lua require("smart-splits").resize_left()<cr>', { desc = "Resize left" })
-map("n", "<C-Right>", '<cmd>lua require("smart-splits").resize_right()<cr>', { desc = "Resize right" })
 
 -- Pilot
 map("n", "<leader>aE", "<cmd>Copilot enable<cr>", { desc = "Copilot enable" })
 map("n", "<leader>aD", "<cmd>Copilot disable<cr>", { desc = "Copilot disable" })
 map("n", "<leader>aR", "<cmd>CopilotChatReset<cr>", { desc = "Reset Copilot Chat" })
 
--- ToggleTerm
+-- Snacks Terminal
 map("n", "<leader>t", "", { desc = "+terminal" })
-map("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<cr>", { desc = "Horizontal terminal" })
-map("n", "<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>", { desc = "Vertical terminal" })
-map("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", { desc = "Floating terminal" })
+map({ "n", "t" }, "<leader>tt", function()
+  Snacks.terminal.toggle()
+end, { desc = "Toggle terminal" })
+map({ "n", "t" }, "<leader>tf", function()
+  Snacks.terminal.toggle(nil, { win = { position = "float" } })
+end, { desc = "Floating terminal" })
+map({ "n", "t" }, "<leader>th", function()
+  Snacks.terminal.toggle(nil, { win = { position = "bottom", height = 0.3 } })
+end, { desc = "Horizontal terminal" })
+map({ "n", "t" }, "<leader>tv", function()
+  Snacks.terminal.toggle(nil, { win = { position = "right", width = 0.4 } })
+end, { desc = "Vertical terminal" })
 
 -- Python
 map("n", "<leader>p", "", { desc = "+python" })
-map("n", "<leader>pr", "<cmd>TermExec cmd='uv run python %'<cr>", { desc = "Run current file" })
+map("n", "<leader>pr", function()
+  local file = vim.fn.expand("%")
+  if file == "" then
+    Snacks.notify.warn("No active file to run")
+    return
+  end
+  vim.cmd("silent! write")
+  Snacks.terminal({ "uv", "run", "python", file }, {
+    auto_close = false,
+    win = { position = "bottom", height = 0.3 },
+  })
+end, { desc = "Run current file (uv)" })
 
 -- Rust
 map("n", "<leader>r", "", { desc = "+rust" })
